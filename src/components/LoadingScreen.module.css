@@ -1,0 +1,31 @@
+.screen {
+  position: fixed; inset: 0;
+  background: var(--bg-primary);
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.inner { text-align: center; }
+.logo {
+  font-size: 3.5rem; font-weight: 900;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  animation: pulse 1.5s ease-in-out infinite;
+  margin-bottom: 24px;
+}
+.bar {
+  width: 200px; height: 4px; background: var(--bg-card);
+  border-radius: 2px; overflow: hidden; margin: 0 auto 16px;
+}
+.fill {
+  height: 100%; width: 0; background: var(--gradient-accent);
+  border-radius: 2px; animation: loadBar 1.8s ease forwards;
+}
+.text { color: var(--text-secondary); font-size: 0.9rem; }
+
+@keyframes loadBar { to { width: 100%; } }
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.96); }
+}

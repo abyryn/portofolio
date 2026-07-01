@@ -1,0 +1,17 @@
+.certs { background: var(--bg-secondary); position: relative; z-index: 1; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 24px; }
+.card {
+  background: var(--bg-card); border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg); padding: 32px 24px;
+  text-align: center; transition: var(--transition); position: relative; overflow: hidden;
+}
+.card:hover { border-color: var(--accent-cyan); transform: translateY(-6px); box-shadow: var(--shadow-glow); }
+.icon { font-size: 2.5rem; margin-bottom: 16px; display: block; }
+.name { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px; font-weight: 500; }
+.badge {
+  display: inline-block; padding: 4px 14px; border-radius: 20px;
+  font-size: 0.75rem; font-weight: 700;
+  background: var(--gradient-accent); color: #fff;
+}
+
+@media (max-width: 480px) { .grid { grid-template-columns: 1fr 1fr; } }
